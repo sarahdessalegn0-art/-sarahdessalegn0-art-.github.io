@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Block vs Inline – Mini Exercise</title>
+
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 30px;
+      background: #f8f9fa;
+      line-height: 1.5;
+    }
+
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+    }
+
+    /* Block-level demo */
+    .card {
+      display: incline-block;
+      background: #dfefff;
+      border: 2px solid #3498db;
+      padding: 16px;
+      margin: 20px auto;
+      max-width: 500px;
+      border-radius: 8px;
+    }
+
+    #highlight-card {
+      background: #d4edda;
+      border-color: #f39c12;
+      font-weight: bold;
+    }
+
+    /* Inline-level demo */
+    .mark {
+      background: #ffe066;
+      padding: 3px 7px;
+      border-radius: 4px;
+    }
+
+    .urgent {
+      color: #e74c3c;
+      font-weight: bold;
+      text-decoration: underline wavy #e74c3c;
+    }
+
+    .fancy {
+      font-style: italic;
+      color: #27ae60;
+      border-bottom: 2px dotted #27ae60;
+    }
+
+    .wrapper {
+      border: 3px dashed #8e44ad;
+      padding: 25px;
+      background: white;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      border-radius: 10px;
+    }
+
+    .inline-block-demo {
+      display: inline-block;
+      background: #e8f5e9;
+      border: 2px solid #2ecc71;
+      padding: 12px 20px;
+      margin: 8px;
+      border-radius: 6px;
+    }
+
+    .rainbow{
+        border: 5px solid;
+        border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet) 1;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <h1>Block vs Inline – Practice Page</h1>
+
+    <div class="card">
+      This is a normal <code>div</code> → it is a <strong>block</strong> element.<br>
+      → starts on a new line<br>
+      → takes full available width (unless limited)
+    </div>
+
+    <div class="card" id="highlight-card">
+      This <code>div</code> has <code>id="highlight-card"</code><br>
+      → An ID must be <strong>unique</strong> on the page
+    </div>
+
+    <div class="card">
+      <strong>Inline elements</strong> stay in the text flow:<br><br>
+
+      Normal text with a <span class="mark">highlighted</span> word.<br>
+      This is <span class="mark urgent">very important</span> information!<br>
+      We can also do <span class="fancy">fancy dotted underline text</span>.
+    </div>
+
+    <div class="card">
+      <p><strong>Quick summary – default display:</strong></p>
+
+      <strong>Block:</strong> new line + full width<br>
+       → <code>div, p, h1–h6, section, article, header, footer, ul, ol, li</code><br><br>
+
+      <strong>Inline:</strong> flows with text + only needed width<br>
+       → <code>span, a, strong, em, code, small, img</code>
+    </div>
+
+    <div class="card">
+      <strong>Bonus experiment – inline-block:</strong><br><br>
+
+      <div class="inline-block-demo">Box A</div>
+      <div class="inline-block-demo">Box B</div>
+      <div class="inline-block-demo">Box C</div><br><br>
+
+      → <code>display: inline-block;</code> lets boxes sit side-by-side
+      like inline elements, but still respect width, height, margins, padding.
+    </div>
+
+  </div>
+
+
+</body>
+</html>
