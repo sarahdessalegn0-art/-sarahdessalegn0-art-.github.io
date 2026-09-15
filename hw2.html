@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Books - Combined Exercise</title>
+
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            margin: 30px;
+            background: #f8f9fa;
+            line-height: 1.5;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        /* Card styles from Exercise 3 */
+        .card {
+            background: #dfefff;
+            border: 2px solid #3498db;
+            padding: 16px;
+            margin: 20px auto;
+            max-width: 900px;
+            border-radius: 8px;
+        }
+
+        #highlight-card {
+            background: #d4edda;
+            border-color: #f39c12;
+            font-weight: bold;
+        }
+
+        /* Inline-level demo classes from Exercise 3 */
+        .mark {
+            background: #ffe066;
+            padding: 3px 7px;
+            border-radius: 4px;
+        }
+
+        .urgent {
+            color: #e74c3c;
+            font-weight: bold;
+            text-decoration: underline wavy #e74c3c;
+        }
+
+        .fancy {
+            font-style: italic;
+            color: #27ae60;
+            border-bottom: 2px dotted #27ae60;
+        }
+
+        .wrapper {
+            border: 3px dashed #8e44ad;
+            padding: 25px;
+            background: white;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            border-radius: 10px;
+        }
+
+        .rainbow {
+            border: 5px solid;
+            border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet) 1;
+            padding: 10px;
+        }
+
+        .inline-block-demo {
+            display: inline-block;
+            background: #e8f5e9;
+            border: 2px solid #2ecc71;
+            padding: 12px 20px;
+            margin: 8px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <!-- Rainbow header from Exercise 3 applied to Exercise 2 title -->
+        <h1 class="rainbow">My Favorite Books</h1>
+        <h2 style="text-align: center;">Highlands Ranch Reading List</h2>
+        <hr width="80%">
+
+        <!-- Welcome Section Card -->
+        <div class="card">
+            <h2>Welcome to my book corner</h2>
+            <p>I read mostly in the evenings after work. Here are some of my top favorites.</p>
+
+            <div style="text-align: center;">
+                <img src="my-books.jpg" width="350" alt="Bookshelf">
+                <br>
+                <span class="fancy">Books make great companions</span>
+            </div>
+        </div>
+
+        <!-- Genres Card with Inline Styles -->
+        <div class="card" id="highlight-card">
+            <h3>Genres I Love</h3>
+            <ul>
+                <li><span class="mark">Science Fiction</span></li>
+                <li><span class="fancy">Fantasy</span></li>
+                <li><u>Historical Fiction</u></li>
+                <li><font color="navy">Mystery</font></li>
+            </ul>
+        </div>
+
+        <!-- Book List Table Card -->
+        <div class="card">
+            <h3 id="booklist">My Top Books</h3>
+
+            <table border="1" cellpadding="6" cellspacing="0" width="100%">
+                <tr bgcolor="#cbd5e1">
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Year</th>
+                    <th>Why I liked it</th>
+                    <th>Link</th>
+                </tr>
+                <tr>
+                    <td><b>Dune</b></td>
+                    <td>Frank Herbert</td>
+                    <td>1965</td>
+                    <td>World building</td>
+                    <td><a href="https://en.wikipedia.org" target="_blank">Wiki</a></td>
+                </tr>
+                <tr>
+                    <td><i>The Hobbit</i></td>
+                    <td>J.R.R. Tolkien</td>
+                    <td>1937</td>
+                    <td><span class="urgent">Classic adventure</span></td>
+                    <td><a href="https://www.goodreads.com" target="_blank">Goodreads</a></td>
+                </tr>
+                <tr>
+                    <td>Project Hail Mary</td>
+                    <td>Andy Weir</td>
+                    <td>2021</td>
+                    <td>Fun science</td>
+                    <td><a href="https://www.goodreads.com" target="_blank">Goodreads</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Quick Links & Inline-Block Bonus Card -->
+        <div class="card">
+            <h3>Quick Links & Reading Status</h3>
+            <ul>
+                <li><a href="#booklist">Jump to Book List</a></li>
+                <li><a href="https://www.goodreads.com" target="_blank">Goodreads</a></li>
+                <li><a href="https://en.wikipedia.org" target="_blank">Wikipedia</a></li>
+                <li><a href="mailto:student@ucdenver.edu">Email Me</a></li>
+            </ul>
+            
+            <p><strong>Display Demo:</strong> Checking out books in genres like <span class="mark">Sci-Fi</span> and <span class="urgent">Fantasy</span>.</p>
+            
+            <div style="text-align: center; margin-top: 15px;">
+                <div class="inline-block-demo">Currently Reading</div>
+                <div class="inline-block-demo">Up Next</div>
+                <div class="inline-block-demo">Completed</div>
+            </div>
+
+            <p style="margin-top: 15px;"><b>Happy reading!</b> Feel free to <a href="mailto:student@ucdenver.edu" class="mark">recommend a book</a>.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
