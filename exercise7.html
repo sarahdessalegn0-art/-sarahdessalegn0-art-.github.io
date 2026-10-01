@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 7 - Image Transparency</title>
+    <style>
+        /* Base page styling */
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Centered table with CSS effects (box-shadow and rounded corners) */
+        table {
+            width: 380px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 20px;
+        }
+
+        th {
+            background-color: #f1f3f5;
+            font-size: 1.1rem;
+            color: #0d6efd;
+        }
+
+        /* Image 1: Starting at 0.5 opacity, fading to 1.0 on hover */
+        .img-fade-1 {
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+            width: 300px;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        .img-fade-1:hover {
+            opacity: 1.0;
+        }
+
+        /* Image 2: Starting at 0.75 opacity, fading to 0.25 on hover (inspired by tutorial hover states) */
+        .img-fade-2 {
+            opacity: 0.75;
+            transition: opacity 0.3s ease;
+            width: 300px;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        .img-fade-2:hover {
+            opacity: 0.25;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>Image Transparency & Hover Effects</th>
+        </tr>
+        <tr>
+            <td>
+                <!-- Replace 'image1.jpg' with your first image file -->
+                <img src="image1.jpg" alt="First Image Example" class="img-fade-1">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <!-- Replace 'image2.jpg' with your second image file -->
+                <img src="image2.jpg" alt="Second Image Example" class="img-fade-2">
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
