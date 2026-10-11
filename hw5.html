@@ -15,15 +15,18 @@
 
         body {
             background-color: #f0f2f5;
-            display: flex;
             height: 100vh;
-            align-items: center;
+            /* Using Flexbox for centering the layout on the page */
+            display: flex;
             justify-content: center;
+            align-items: center;
         }
 
-        /* Main Dashboard Wrapper */
+        /* Main Dashboard Wrapper: 
+           Using CSS Grid for the 2D layout structure (Sidebar + Main Content columns) as taught in the lecture */
         .dashboard-container {
-            display: flex;
+            display: grid;
+            grid-template-columns: 240px 1fr;
             width: 900px;
             height: 520px;
             background-color: #ffffff;
@@ -32,9 +35,9 @@
             overflow: hidden;
         }
 
-        /* Sidebar Styling */
+        /* Sidebar: 
+           Using Flexbox for the 1-dimensional vertical column layout */
         .sidebar {
-            width: 240px;
             background-color: #1e293b;
             color: #ffffff;
             display: flex;
@@ -53,6 +56,8 @@
             letter-spacing: 0.5px;
         }
 
+        /* Nav Links Component: 
+           Using Flexbox column direction with the 'gap' property for spacing instead of margins */
         .nav-links {
             list-style: none;
             padding-top: 15px;
@@ -82,13 +87,12 @@
 
         .logout {
             margin-top: auto;
-            border-top: 1px solid #334155;
             padding-top: 10px;
         }
 
-        /* Main Content Styling */
+        /* Main Content Area: 
+           Using Flexbox for perfect centering of the welcome card */
         .main-content {
-            flex-grow: 1;
             background-color: #f8fafc;
             display: flex;
             align-items: center;
