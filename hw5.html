@@ -75,6 +75,7 @@
             font-size: 15px;
             font-weight: 500;
             transition: all 0.2s ease;
+            cursor: pointer;
         }
 
         .nav-links li a:hover,
@@ -130,25 +131,57 @@
                 <h2>MyApp</h2>
             </div>
             <ul class="nav-links">
-                <li><a href="#dashboard" class="active">Dashboard</a></li>
-                <li><a href="#analytics">Analytics</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#messages">Messages</a></li>
-                <li><a href="#settings">Settings</a></li>
-                <li><a href="#documents">Documents</a></li>
-                <li class="logout"><a href="#logout">Logout</a></li>
+                <li><a href="#dashboard" data-page="dashboard" class="active">Dashboard</a></li>
+                <li><a href="#analytics" data-page="analytics">Analytics</a></li>
+                <li><a href="#projects" data-page="projects">Projects</a></li>
+                <li><a href="#team" data-page="team">Team</a></li>
+                <li><a href="#messages" data-page="messages">Messages</a></li>
+                <li><a href="#settings" data-page="settings">Settings</a></li>
+                <li><a href="#documents" data-page="documents">Documents</a></li>
+                <li class="logout"><a href="#logout" data-page="logout">Logout</a></li>
             </ul>
         </nav>
 
         <!-- Main Content Area -->
         <main class="main-content">
-            <div class="welcome-card">
+            <div class="welcome-card" id="content-card">
                 <h1>Welcome to the Dashboard</h1>
                 <p>Click on the links in the vertical navigation bar on the left.</p>
             </div>
         </main>
     </div>
+
+    <script>
+        const links = document.querySelectorAll('.nav-links a');
+        const contentCard = document.getElementById('content-card');
+
+        const pages = {
+            dashboard: { title: "Welcome to the Dashboard", text: "Click on the links in the vertical navigation bar on the left." },
+            analytics: { title: "Analytics Overview", text: "Here you can view your traffic reports, charts, and metrics." },
+            projects: { title: "Your Projects", text: "Manage, track, and update your active team projects here." },
+            team: { title: "Team Members", text: "Collaborate and view contact details for your teammates." },
+            messages: { title: "Messages", text: "You have 3 unread messages in your inbox." },
+            settings: { title: "Account Settings", text: "Update your profile, password, and application preferences." },
+            documents: { title: "Documents & Files", text: "Access your shared files, reports, and resource folders." },
+            logout: { title: "Logged Out", text: "You have been successfully logged out of MyApp." }
+        };
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                links.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                const pageKey = link.getAttribute('data-page');
+                const pageData = pages[pageKey];
+
+                if (pageData) {
+                    contentCard.innerHTML = `<h1>${pageData.title}</h1><p>${pageData.text}</p>`;
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
