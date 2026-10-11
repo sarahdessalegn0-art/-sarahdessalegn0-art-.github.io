@@ -14,60 +14,59 @@
         }
 
         body {
-            background-color: #f0f2f5;
+            background-color: #e5e7eb;
             display: flex;
             height: 100vh;
             align-items: center;
             justify-content: center;
         }
 
-        /* Main Dashboard Wrapper */
+        /* Compact Dashboard Wrapper */
         .dashboard-container {
             display: flex;
-            width: 900px;
-            height: 520px;
+            width: 720px;
+            height: 420px;
             background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
 
         /* Sidebar Styling */
         .sidebar {
-            width: 240px;
+            width: 200px;
             background-color: #1e293b;
             color: #ffffff;
             display: flex;
             flex-direction: column;
-            padding: 20px 0;
+            padding: 16px 0;
         }
 
         .sidebar-header {
-            padding: 0 24px 20px 24px;
+            padding: 0 16px 12px 16px;
             border-bottom: 1px solid #334155;
         }
 
         .sidebar-header h2 {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 600;
-            letter-spacing: 0.5px;
         }
 
         .nav-links {
             list-style: none;
-            padding-top: 15px;
+            padding-top: 10px;
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 2px;
             flex-grow: 1;
         }
 
         .nav-links li a {
             display: block;
-            padding: 12px 24px;
+            padding: 8px 16px;
             color: #94a3b8;
             text-decoration: none;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 500;
             transition: all 0.2s ease;
             cursor: pointer;
@@ -77,13 +76,13 @@
         .nav-links li a.active {
             color: #ffffff;
             background-color: #3b82f6;
-            border-radius: 0 20px 20px 0;
-            margin-right: 12px;
+            border-radius: 0 16px 16px 0;
+            margin-right: 8px;
         }
 
         .logout {
             margin-top: auto;
-            padding-top: 10px;
+            padding-top: 8px;
         }
 
         /* Main Content Styling */
@@ -93,26 +92,26 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 40px;
+            padding: 24px;
         }
 
         .welcome-card {
             background-color: #ffffff;
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             width: 100%;
-            border-left: 5px solid #3b82f6;
+            border-left: 4px solid #3b82f6;
         }
 
         .welcome-card h1 {
-            font-size: 28px;
+            font-size: 24px;
             color: #1e293b;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .welcome-card p {
-            font-size: 15px;
+            font-size: 14px;
             color: #64748b;
         }
     </style>
@@ -141,7 +140,7 @@
         <main class="main-content">
             <div class="welcome-card" id="content-card">
                 <h1>Welcome to the Dashboard</h1>
-                <p>Click on the links in the vertical navigation bar on the left[cite: 1].</p>
+                <p>Click on the links in the vertical navigation bar on the left.</p>
             </div>
         </main>
     </div>
@@ -151,7 +150,7 @@
         const contentCard = document.getElementById('content-card');
 
         const pages = {
-            dashboard: { title: "Welcome to the Dashboard", text: "Click on the links in the vertical navigation bar on the left[cite: 1]." },
+            dashboard: { title: "Welcome to the Dashboard", text: "Click on the links in the vertical navigation bar on the left." },
             analytics: { title: "Analytics Overview", text: "Here you can view your traffic reports, charts, and metrics." },
             projects: { title: "Your Projects", text: "Manage, track, and update your active team projects here." },
             team: { title: "Team Members", text: "Collaborate and view contact details for your teammates." },
