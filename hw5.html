@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyApp Dashboard</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Main Dashboard Wrapper */
+        .dashboard-container {
+            display: flex;
+            width: 900px;
+            height: 520px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 240px;
+            background-color: #1e293b;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0;
+        }
+
+        .sidebar-header {
+            padding: 0 24px 20px 24px;
+            border-bottom: 1px solid #334155;
+        }
+
+        .sidebar-header h2 {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex-grow: 1;
+        }
+
+        .nav-links li a {
+            display: block;
+            padding: 12px 24px;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .nav-links li a:hover,
+        .nav-links li a.active {
+            color: #ffffff;
+            background-color: #3b82f6;
+            border-radius: 0 20px 20px 0;
+            margin-right: 12px;
+        }
+
+        .logout {
+            margin-top: auto;
+            border-top: 1px solid #334155;
+            padding-top: 10px;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            flex-grow: 1;
+            background-color: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .welcome-card {
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            border-left: 5px solid #3b82f6;
+        }
+
+        .welcome-card h1 {
+            font-size: 28px;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .welcome-card p {
+            font-size: 15px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>MyApp</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a data-page="dashboard" class="active">Dashboard</a></li>
+                <li><a data-page="analytics">Analytics</a></li>
+                <li><a data-page="projects">Projects</a></li>
+                <li><a data-page="team">Team</a></li>
+                <li><a data-page="messages">Messages</a></li>
+                <li><a data-page="settings">Settings</a></li>
+                <li><a data-page="documents">Documents</a></li>
+                <li class="logout"><a data-page="logout">Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="welcome-card" id="content-card">
+                <h1>Welcome to the Dashboard</h1>
+                <p>Click on the links in the vertical navigation bar on the left.</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const links = document.querySelectorAll('.nav-links a');
+        const contentCard = document.getElementById('content-card');
+
+        // Page content mapping
+        const pages = {
+            dashboard: { title: "Welcome to the Dashboard", text: "Click on the links in the vertical navigation bar on the left." },
+            analytics: { title: "Analytics Overview", text: "Here you can view your traffic reports, charts, and metrics." },
+            projects: { title: "Your Projects", text: "Manage, track, and update your active team projects here." },
+            team: { title: "Team Members", text: "Collaborate and view contact details for your teammates." },
+            messages: { title: "Messages", text: "You have 3 unread messages in your inbox." },
+            settings: { title: "Account Settings", text: "Update your profile, password, and application preferences." },
+            documents: { title: "Documents & Files", text: "Access your shared files, reports, and resource folders." },
+            logout: { title: "Logged Out", text: "You have been successfully logged out of MyApp." }
+        };
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevents page jumping
+
+                // Remove active class from all links
+                links.forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+
+                // Get page key and update content
+                const pageKey = link.getAttribute('data-page');
+                const pageData = pages[pageKey];
+
+                if (pageData) {
+                    contentCard.innerHTML = `<h1>${pageData.title}</h1><p>${pageData.text}</p>`;
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
