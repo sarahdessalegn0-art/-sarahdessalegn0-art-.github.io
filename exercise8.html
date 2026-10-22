@@ -245,14 +245,73 @@
       text-decoration: underline;
     }
 
-    /* Responsive: stack nav a bit tighter on small screens */
-    @media (max-width: 600px) {
-      .nav-main > li > a {
-        padding: 0.7rem 0.9rem;
-        font-size: 0.9rem;
+    /* ========== RESPONSIVE MEDIA QUERIES ========== */
+    @media (max-width: 768px) {
+      .nav-wrapper {
+        padding: 0.5rem;
       }
+
+      .nav-main {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.2rem;
+      }
+
+      .nav-main > li > a {
+        justify-content: flex-start;
+        padding: 0.8rem 1rem;
+        width: 100%;
+      }
+
+      /* Transform dropdown into an inline expanding menu on smaller screens */
       .nav-sub {
-        min-width: 180px;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-width: 100%;
+        box-shadow: none;
+        background: rgba(10, 15, 30, 0.6);
+        margin-top: 0.2rem;
+        border-radius: 6px;
+      }
+
+      .nav-main > li:hover > .nav-sub,
+      .nav-main > li:focus-within > .nav-sub {
+        transform: translateY(0);
+      }
+
+      .nav-sub li a {
+        padding-left: 2rem; /* Indent sub-items for visual hierarchy */
+      }
+
+      main {
+        margin: 1.5rem auto;
+        padding: 0 1rem;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      .subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 1.8rem;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr; /* Force single column on smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-main > li > a {
+        font-size: 0.95rem;
+        padding: 0.7rem 0.8rem;
+      }
+
+      .card img {
+        height: 160px;
       }
     }
   </style>
