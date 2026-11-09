@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            min-width: 480px;
+        }
+        nav ul {
+            list-style-type: none;
+            background-color: #333;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        nav ul li {
+            float: left;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #1abb9b;
+        }
+    </style>
+</head>
+<body>
+<h1>JavaScript Statements</h1>
+<nav>
+    <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services We Provide</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+</nav>
+<p>JavaScript statements are separated by semicolons.</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<a href="https://www.google.com"
+    target="_blank"
+    style="display: inline-block; padding: 10px 20px; background-color: rgba(0, 0, 255, 0.7); color: white; text-decoration: none;">Google</a>
+<script>
+    var a =10
+    var b=5
+    var c =a-b
+    var d =15
+    var e =c+d
+    document.getElementById("demo1").innerHTML = "a=" + a + " b=" + b;
+    document.getElementById("demo2").innerHTML = "c=" + c;
+    document.getElementById("demo3").innerHTML = "d=" + d;
+    document.getElementById("demo4").innerHTML = "e=" + e;
+
+</script>
+
+</body>
+</html>
