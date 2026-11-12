@@ -1,46 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>JavaScript If / Else Statements</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-  </style>
+  <title>JS if/else explanation</title>
 </head>
 <body>
 
-  <h1>How JavaScript If / Else Statements Work</h1>
+  <h1>How JS if/else statements work</h1>
 
-  <p>An if statement is used to make decisions and run code only when a condition is true.</p>
+  <p>So basically, an if/else statement is how you get your code to make decisions. You give it a condition, and depending on whether that condition is true or false, it runs different blocks of code.</p>
 
-  <h2>1. The if Statement</h2>
-  <p>If the condition inside the parentheses is true, the code inside the curly braces runs.</p>
-  <p>let score = 85;<br><br>
-  if (score > 70) {<br>
-  console.log("You passed!");<br>
-  }</p>
+  <h3>1. The basic if statement</h3>
+  <p>This is the simplest one. You put a condition in parentheses. Whatever is inside the curly brackets runs if its true. Otherwise, the code just skips it completely if its false.</p>
 
-  <h2>2. The if...else Statement</h2>
-  <p>Use an else statement to run alternative code if the condition is false.</p>
-  <p>let age = 16;<br><br>
-  if (age >= 18) {<br>
-  console.log("You can vote.");<br>
-  } else {<br>
-  console.log("You cannot vote yet.");<br>
-  }</p>
+  <h3>2. The if...else statement</h3>
+  <p>This is when you want a backup plan. It does one thing if the main condition is true. But if it's false, it drops down to the else block and does that instead.</p>
 
-  <h2>3. The else if Statement</h2>
-  <p>Use else if when you have multiple conditions to check in order.</p>
-  <p>let time = 14;<br><br>
-  if (time < 12) {<br>
-  console.log("Good morning!");<br>
-  } else if (time < 18) {<br>
-  console.log("Good afternoon!");<br>
-  } else {<br>
-  console.log("Good evening!");<br>
-  }</p>
+  <h3>3. The else if statement</h3>
+  <p>You chain a bunch of these together if you have more than two options to check. It checks them in order from top to bottom, and as soon as it finds one that works, it runs that code and ignores the rest.</p>
 
 </body>
 </html>
